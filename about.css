@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Ubuntu&display=swap');
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+  }
+/*Header  */
+header {
+  background-color: #1E1E1E; /* Distinct dark background */
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.8rem;
+  color: #f8e71c;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 2rem;
+}
+
+.nav-links a {
+  color: #f8e71c; /* Keep the text color distinct */
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  background-color: transparent; /* Keep background transparent */
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nav-links a:hover {
+  color: #1E1E1E;
+  background-color: #f8e71c;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: #f8e71c; /* Make sure the icon is visible */
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+/* Responsive Menu (Mobile) */
+@media (max-width: 768px) {
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: #1E1E1E;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 100%;
+      text-align: center;
+      padding: 1rem;
+      z-index: 9999;
+  }
+
+  .nav-links.active {
+      display: flex; /* Show the menu when active */
+  }
+
+  .nav-links li {
+      margin: 1rem 0;
+  }
+
+  .hamburger {
+      display: block;
+  }
+
+  /* Fix for the menu not hiding hero section content */
+  .nav-links.active {
+      z-index: 1000;
+      top: 60px; /* Prevent overlapping with hero section */
+  }
+}
+
+
+/* Adjust hamburger icon state when active */
+.hamburger.active:before {
+  content: "\2630"; /* Show three horizontal lines */
+}
+
+/* Styling for active hamburger icon */
+.hamburger.active {
+  font-size: 2rem;
+  transform: rotate(0deg);
+}
+
+
+/* Main Styles */
+
+main {
+    padding: 50px 0;
+}
+
+/* About Section */
+.about-section {
+    background-color: #f0f0f0;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-image {
+    flex: 1 1 300px;
+    margin-bottom: 20px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-content {
+    flex: 1 1 600px;
+}
+
+.about-content h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.contact-button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .about-content h2 {
+        font-size: 30px;
+    }
+
+    .about-content p {
+        font-size: 16px;
+    }
+
+    .about-image {
+        order: 1;
+    }
+
+    .about-content {
+        order: 2;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-content h2 {
+        font-size: 24px;
+    }
+
+    .about-content p {
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+/* Footer Section */
+footer {
+    background-color: #1c1c1c;
+    color: #fff;
+    padding: 2rem 0;
+    position: relative;
+    font-size: 0.9rem; /* Smaller font size */
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+    gap: 2rem; /* Gap between sections */
+  }
+  
+  .footer-links,
+  .footer-newsletter,
+  .footer-contact {
+    flex: 1;
+    margin-bottom: 1rem;
+    min-width: 200px; /* Smaller width */
+  }
+  
+  .footer-links h3,
+  .footer-newsletter h3,
+  .footer-contact h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: #f8e71c; /* Bright yellow for headings */
+  }
+  
+  .footer-links a {
+    color: #b3b3ff; /* Light purple links */
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    display: block;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .footer-links a:hover {
+    color: #f8e71c; /* Bright yellow on hover */
+  }
+  
+  .footer-newsletter form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-newsletter input[type="email"] {
+    padding: 0.6rem;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .footer-newsletter button {
+    padding: 0.8rem;
+    border: none;
+    background-color: #4A90E2;
+    color: #fff;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .footer-newsletter button:hover {
+    background-color: #f8e71c;
+    color: #333;
+  }
+  
+  .footer-contact p {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .footer-contact .social-icons {
+    margin-top: 0.8rem;
+  }
+  
+  .footer-contact .social-icons a {
+    color: #fff;
+    margin-right: 0.8rem;
+    font-size: 1.4rem;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .footer-contact .social-icons a:hover {
+    color: #4A90E2; /* Bright blue on hover */
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #111;
+    font-size: 0.8rem; /* Smaller text */
+    color: #aaa; /* Lighter color for footer text */
+  }
+  
+  /* Spacing on larger screens */
+  @media (min-width: 768px) {
+    .footer-container {
+      padding: 1.5rem 4rem; /* Add extra padding */
+    }
+  
+    .footer-newsletter, .footer-contact {
+      margin-right: 1rem; /* More space between sections */
+    }
+  }
+  
